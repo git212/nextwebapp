@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('SCM Checkout'){
             git url: 'https://github.com/git212/nextwebapp'
-                branch: 'master',
+                branch: 'master'
                 credentialsId: 'github'
         }
     }
