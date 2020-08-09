@@ -33,11 +33,11 @@ pipeline{
     }
     post{
         success{
-           mail body: '''Hi Team, This app is successfully deployed
-
+           mail body: """Hi Team, This app is successfully deployed
+           ${BUILD_URL}
 Thanks,
 DevOps Team.
-git212''', subject: 'Successfully Deployed', to: 'bharatmahanta.mahanta2@gmail.com'
+git212""", subject: "${JOB_NAME}-Successfully Deployed", to: 'bharatmahanta.mahanta2@gmail.com'
         }  
     }
 }
