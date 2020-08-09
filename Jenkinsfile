@@ -4,13 +4,7 @@ pipeline{
       PATH = "${PATH}:${tool name: 'maven3', type: 'maven'}/bin"
     }
     stages{
-        stage('SCM Checkout'){
-            steps{
-                git branch: "${params['branchName']}",
-                    url: 'https://github.com/git212/nextwebapp'
-            }
-        }
-
+        
         stage('Maven Build'){
             steps{
                 sh "mvn clean package"
@@ -19,7 +13,7 @@ pipeline{
 
         stage('Deploy - Dev'){
             steps{
-                echo "deploy to dev server "
+                echo "deploy to dev server"
             }
         }
     }
