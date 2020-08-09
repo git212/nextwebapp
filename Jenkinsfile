@@ -1,7 +1,7 @@
 pipeline{
     agent any
-    parameters {
-        string defaultValue: 'master', description: 'Choose the branch to build and deploy', name: 'branchName', trim: false
+    environment{
+      PATH = "${PATH}:${tool name: 'maven3', type: 'maven'}/bin"
     }
     stages{
         stage('SCM Checkout'){
@@ -9,6 +9,16 @@ pipeline{
                 git branch: "${params['branchName']}",
                     url: 'https://github.com/git212/nextwebapp'
             }
+        }
+
+        stage('Maven Build'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+
+        stage('Deploy - Dev'){
+
         }
     }
 }
