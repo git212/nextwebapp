@@ -40,7 +40,7 @@ DevOps Team.
 git212""", subject: "${JOB_NAME}-Successfully Deployed", to: 'bharatmahanta.mahanta2@gmail.com'
         }  
 
-        unstable{
+        failure{
              mail body: """Hi Team, This app deployment faield
            ${BUILD_URL}
 Thanks,
