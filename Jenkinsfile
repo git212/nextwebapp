@@ -1,16 +1,17 @@
 pipeline{
     agent any
     environment{
-        PATH = "${PATH}:${tool name: 'maven3', type: 'maven'}/bin"
+       PATH = "${PATH}:${tool name: 'maven3', type: 'maven'}/bin"
     }
     stages{
         stage('SCM Checkout'){
-            git url: 'https://github.com/git212/nextwebapp',
+            steps{
+                git url: 'https://github.com/git212/nextwebapp',
                 branch: 'master',
                 credentialsId: 'github'
+            }
         }
-    }
-
+        
         stage('Maven Build'){
             steps{
                 sh 'mvn clean package'
