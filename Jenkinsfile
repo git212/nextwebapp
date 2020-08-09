@@ -33,7 +33,7 @@ pipeline{
     }
     post{
         success{
-           mail bcc: '''Hi Team, This app is successfully deployed
+           mail body: '''Hi Team, This app is successfully deployed
 
 Thanks,
 DevOps Team.
