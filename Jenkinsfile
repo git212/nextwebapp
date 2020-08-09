@@ -39,5 +39,13 @@ Thanks,
 DevOps Team.
 git212""", subject: "${JOB_NAME}-Successfully Deployed", to: 'bharatmahanta.mahanta2@gmail.com'
         }  
+
+        unstable{
+             mail body: """Hi Team, This app deployment faield
+           ${BUILD_URL}
+Thanks,
+DevOps Team.
+git212""", subject: "${JOB_NAME} - Deployment faield", to: 'bharatmahanta.mahanta2@gmail.com'
+        }
     }
 }
